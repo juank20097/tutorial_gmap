@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvg6XAA4WoKlTCS7CE7Eo3eMsVJXB8LA4&signed_in=true&libraries=places"></script>
+
+    <!-- your app's js -->
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="MapCtrl">
+
+    <ion-pane>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Google Maps</h1>
+      </ion-header-bar>
+      <ion-content data-tap-disable="true">
+        <div id="map"></div>
+      </ion-content >
+      <ion-footer-bar class="bar-positive">
+        <input id="search" class="controls" type="text" placeholder="Buscar..">
+        <a ng-click="locateMe()" class="button button-icon icon ion-ios-navigate-outline"></a>
+         <a ng-click="paintRoute()" class="button button-icon icon ion-fork-repo"></a>
+          <a ng-click="trazarRuta()" class="button button-icon icon ion-fork-repo"></a>
+           <a ng-click="paintCircle()" class="button button-icon icon ion-ios-navigate-outline"></a>
+        <label class="toggle" ng-click="toggleAddMarker()">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+
+        <a ng-click="changeView()" class="button button-icon icon ion-ios-body"></a>
+    </ion-pane>
+  </body>
+</html>
